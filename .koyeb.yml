@@ -1,0 +1,16 @@
+app:
+  name: shopee-scraper
+  services:
+    - name: web
+      type: web
+      docker:
+        dockerfile: Dockerfile
+      ports:
+        - port: 10000
+          protocol: http
+      regions:
+        - sin
+      instance_type: nano
+      env:
+        - name: PYTHONUNBUFFERED
+          value: "1"
