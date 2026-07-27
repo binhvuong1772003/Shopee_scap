@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: shopee-scraper
+    env: python
+    region: singapore
+    plan: free
+    buildCommand: pip install -r requirements.txt && playwright install chromium
+    startCommand: python main.py
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: 1
+      - key: PLAYWRIGHT_BROWSERS_PATH
+        value: /opt/render/.cache/ms-playwright
